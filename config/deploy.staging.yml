@@ -1,7 +1,7 @@
 # Own service and image: Kamal prunes by service label only, so a shared service would let
 # staging deploys delete production's rollback containers on the shared droplet.
 service: property_valuation_staging
-image: nicolas2003/property_valuation_staging
+image: rpazevedo/property_valuation_staging
 
 proxy:
   host: houses-staging.kmaster.app
