@@ -31,7 +31,7 @@ pipeline {
     stage('Code Quality Check') {
       agent {
         docker {
-          image 'ghcr.io/astral-sh/uv:python3.13-bookworm-slim'
+          image 'ghcr.io/astral-sh/uv:python3.14-trixie-slim'
           reuseNode true
         }
       }
@@ -47,7 +47,7 @@ pipeline {
     stage('Tests') {
       agent {
         docker {
-          image 'ghcr.io/astral-sh/uv:python3.13-bookworm-slim'
+          image 'ghcr.io/astral-sh/uv:python3.14-trixie-slim'
           reuseNode true
         }
       }
@@ -146,7 +146,7 @@ pipeline {
       }
       agent {
         docker {
-          image 'ghcr.io/astral-sh/uv:python3.13-bookworm-slim'
+          image 'ghcr.io/astral-sh/uv:python3.14-trixie-slim'
           reuseNode true
         }
       }
