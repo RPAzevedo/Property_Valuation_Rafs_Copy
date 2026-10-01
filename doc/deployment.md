@@ -70,7 +70,7 @@ This has four consequences:
 
 | File | Purpose |
 |---|---|
-| `Dockerfile` | Production image: `python:3.13-slim` + `uv sync --frozen --no-dev`, runs Streamlit on `0.0.0.0:8501` as a non-root user. |
+| `Dockerfile` | Production image: `python:3.14-slim` + `uv sync --frozen --no-dev`, runs Streamlit on `0.0.0.0:8501` as a non-root user. |
 | `.dockerignore` | Keeps tests, scripts, docs, `.venv`, `.git`, CI output and local secrets out of the build context. |
 | `config/deploy.yml` | Kamal config: server, proxy host, app port, healthcheck, registry, builder arch. |
 | `config/deploy.staging.yml` | Staging overrides (`kamal deploy -d staging`): its own service, image and host. |

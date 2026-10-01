@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:3.14-slim
 
 # Links the GHCR package to the GitHub repo.
 LABEL org.opencontainers.image.source="https://github.com/RPAzevedo/Property_Valuation_Rafs_Copy.git"
