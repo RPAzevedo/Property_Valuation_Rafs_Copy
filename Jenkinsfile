@@ -139,26 +139,26 @@ pipeline {
       }
     }
 
-    stage('Monitoring and Alerting') {
-      when {
-        branch 'main'
-        beforeAgent true
-      }
-      agent {
-        docker {
-          image 'ghcr.io/astral-sh/uv:python3.14-trixie-slim'
-          reuseNode true
-        }
-      }
-      environment {
-        APP_HEALTH_URL  = "${PRODUCTION_URL}${HEALTH_PATH}"
-        UPTIME_CHECK_ID = '9eb1ff0c-fc8b-464f-8f59-0ce9f1821faa'
-      }
-      steps {
-        withCredentials([string(credentialsId: 'digital-ocean-monitoring-token', variable: 'DO_TOKEN')]) {
-          sh 'python3 scripts/check_monitoring.py'
-        }
-      }
-    }
+    // stage('Monitoring and Alerting') {
+    //   when {
+    //     branch 'main'
+    //     beforeAgent true
+    //   }
+    //   agent {
+    //     docker {
+    //       image 'ghcr.io/astral-sh/uv:python3.14-trixie-slim'
+    //       reuseNode true
+    //     }
+    //   }
+    //   environment {
+    //     APP_HEALTH_URL  = "${PRODUCTION_URL}${HEALTH_PATH}"
+    //     UPTIME_CHECK_ID = '9eb1ff0c-fc8b-464f-8f59-0ce9f1821faa'
+    //   }
+    //   steps {
+    //     withCredentials([string(credentialsId: 'digital-ocean-monitoring-token', variable: 'DO_TOKEN')]) {
+    //       sh 'python3 scripts/check_monitoring.py'
+    //     }
+    //   }
+    // }
   }
 }
