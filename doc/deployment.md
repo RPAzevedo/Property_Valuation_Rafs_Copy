@@ -87,7 +87,10 @@ Key settings in `config/deploy.yml`:
   kamal-proxy only switches traffic to a new container after this returns 200.
 - **`registry.server: ghcr.io`**: images are pushed to a private package on GitHub Container
   Registry. Kamal runs `docker login ghcr.io` on your machine (to push) and on the server (to
-  pull) with `username: rpazevedo` and `KAMAL_REGISTRY_PASSWORD`. The Dockerfile's
+  pull) with `registry.username` and `KAMAL_REGISTRY_PASSWORD`. Only the token is secret: the
+  username and the image's owner (`image: nicolas2003/...`) are set in plain text in
+  `config/deploy.yml` and `config/deploy.staging.yml`, and the Jenkinsfile reads the image names
+  from `kamal config`, so changing the owner is a change to those two files only. The Dockerfile's
   `org.opencontainers.image.source` label links the package to the GitHub repo.
 - **`builder.arch: amd64`**: the droplet is x86_64, so the image is built for amd64 even on
   Apple Silicon.
