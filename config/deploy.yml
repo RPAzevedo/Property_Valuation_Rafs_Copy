@@ -1,6 +1,6 @@
 service: property_valuation
 
-image: nicolas2003/property_valuation
+image: rpazevedo/property_valuation
 
 servers:
   web:
@@ -15,7 +15,7 @@ proxy:
 
 registry:
   server: ghcr.io
-  username: nicolas2003
+  username: rpazevedo
   password:
     - KAMAL_REGISTRY_PASSWORD
 
